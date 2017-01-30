@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 
@@ -31,3 +30,10 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/auth/login',
     failureFlash: true
 }));
+//logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
+module.exports = router;
