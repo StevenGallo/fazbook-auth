@@ -2,22 +2,33 @@
   <body>
     <% include ../partials/header.ejs %>
     <main>
-      <div class="container">
-        <form action="/auth/login" method="post">
-          <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-          </div>
-          <div>
-            <input type="submit" value="Log In"/>
-          </div>
-        </form>
+      <div class="row">
+        <form class="col s12" action="/auth/login" method="post">
+        <div class="row">
+          <div class="row">
+        <div class="input-field col s12">
+          <input id="user" class="validate">
+          <label for="name">Username:</label>
+        </div>
       </div>
+          <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" name="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+          <div>
+<button class="btn waves-effect waves-light" type="submit" name="action">Log in
+    <i class="material-icons right">send</i>
+  </button>
+          </div>
+        </div>
+        </form>
+    </div>
     </main>
     <% include ../partials/footer.ejs %>
   </body>
 </html>
+
+
+ 
